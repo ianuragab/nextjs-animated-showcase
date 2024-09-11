@@ -52,7 +52,7 @@ const ProductCarousel: FC<ProductCarouselProps> = ({ products, currentProductId,
               <CardMedia
                 component="img"
                 height="140"
-                image={product.image}
+                image={product?.image}
                 alt={product.name}
               />
               <Box p={2}>

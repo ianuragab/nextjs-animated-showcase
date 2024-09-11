@@ -7,7 +7,7 @@ interface ProductProps {
     id: string;
     name: string;
     price: number;
-    image: string | unknown;
+    image: string;
     duration: string;
   };
   handleClick: () => void;
@@ -23,7 +23,7 @@ const ProductCard: FC<ProductProps> = ({ product, handleClick }) => (
       <CardMedia
         component="img"
         height="200"
-        image={product.image}
+        image={product?.image}
         alt={product.name}
         sx={{ ":hover": { scale: 1.08 }, transition: 'all 0.3s ease', objectFit: "fill" }}
       />
