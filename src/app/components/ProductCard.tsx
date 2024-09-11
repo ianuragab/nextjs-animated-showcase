@@ -23,7 +23,7 @@ const ProductCard: FC<ProductProps> = ({ product, handleClick }) => (
       <CardMedia
         component="img"
         height="200"
-        image={product?.image}
+        image={typeof product.image === 'string' ? product.image : ''}
         alt={product.name}
         sx={{ ":hover": { scale: 1.08 }, transition: 'all 0.3s ease', objectFit: "fill" }}
       />

@@ -47,11 +47,11 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, onAddToCart, allProduc
       transition={{ duration: 0.9 }}
       style={{ margin: '4em', }}
     >
-      <Grid container spacing={4} sx={{ padding: '1em', borderRadius: '1em', border: '2px solid white' }}>
-        <Grid item xs={12} md={6}>
+      <Grid container sx={{ padding: '1em', borderRadius: '1em', border: '2px solid white', display: 'flex', gap: "1em" }}>
+        <Grid item xs={12} md={5.8}>
           <CardMedia
             component="img"
-            image={product.image}
+            image={typeof product.image === 'string' ? product.image : ''}
             alt={product.name}
             style={{ borderRadius: '1em', objectFit: 'fill', width: '100%' }}
           />
