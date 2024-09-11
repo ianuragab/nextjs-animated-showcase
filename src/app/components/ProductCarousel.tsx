@@ -37,6 +37,7 @@ const ProductCarousel: FC<ProductCarouselProps> = ({ products, currentProductId,
         style={{ display: 'flex', gap: '1.2em' }}
         variants={carouselVariants}
         animate={controls}
+        onTouchMove={() => controls.start('animate')}
         onHoverStart={() => controls.stop()} // Pause the animation on hover
         onHoverEnd={() => controls.start('animate')} // Resume the animation on mouse leave
       >

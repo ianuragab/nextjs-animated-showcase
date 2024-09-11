@@ -39,15 +39,19 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, onAddToCart, allProduc
     },
   };
 
+  const MotionBox = motion(Box);
+
   return (
-    <motion.div
+    <MotionBox
       initial={{ opacity: 0, scale: 0.7 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.9 }}
-      style={{ margin: '4em', }}
+      sx={{
+        margin: { xs: '2em', md: '4em' }, // Responsive margin using sx prop
+      }}
     >
-      <Grid container sx={{ padding: '1em', borderRadius: '1em', border: '2px solid white', display: 'flex', gap: "1em" }}>
+      <Grid container sx={{ padding: '1em', borderRadius: '1em', border: '2px solid white', display: 'flex', gap: "1em", justifyContent: "space-between" }}>
         <Grid item xs={12} md={5.8}>
           <CardMedia
             component="img"
@@ -56,7 +60,7 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, onAddToCart, allProduc
             style={{ borderRadius: '1em', objectFit: 'fill', width: '100%' }}
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={5.9}>
           <Typography variant="h4" component="h1" gutterBottom>
             {product.name}
           </Typography>
@@ -129,7 +133,7 @@ const ProductDetail: FC<ProductDetailProps> = ({ product, onAddToCart, allProduc
         currentProductId={product.id}
         onProductClick={onProductClick}
       />
-    </motion.div>
+    </MotionBox>
   );
 };
 
