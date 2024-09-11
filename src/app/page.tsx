@@ -35,7 +35,7 @@ const Home: React.FC = () => {
       initial="hidden"
       animate="visible"
     >
-      <Grid container spacing={3} sx={{ padding: '3em' }}>
+      <Grid container spacing={3} sx={{ padding: { xs: '1.4em', md: '3.2em' } }}>
         {products.map((product, index) => (
           <Grid item xs={12} sm={5.9} md={4} key={index}>
             <motion.div variants={itemVariants}>

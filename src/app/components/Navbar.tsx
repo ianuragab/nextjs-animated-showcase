@@ -19,7 +19,7 @@ const Navbar = () => {
         </Box>
 
         {/* Search Bar */}
-        <Box sx={{ display: 'flex', alignItems: 'center', width: '40%', bgcolor: 'white', borderRadius: '4px', p: 0.5 }}>
+        <Box sx={{ display: {xs: "none", md: "flex"}, alignItems: 'center', width: '40%', bgcolor: 'white', borderRadius: '4px', p: 0.5 }}>
           <Search sx={{ color: '#0070f3', mr: 1 }} />
           <InputBase placeholder="Search…" sx={{ width: '100%' }} />
         </Box>
